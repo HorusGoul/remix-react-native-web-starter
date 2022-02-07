@@ -1,8 +1,8 @@
 {
   "private": true,
-  "name": "remix-app-template",
+  "name": "remix-react-native-web-starter",
   "description": "",
-  "license": "",
+  "license": "MIT",
   "scripts": {
     "build": "remix build",
     "dev": "remix dev",
