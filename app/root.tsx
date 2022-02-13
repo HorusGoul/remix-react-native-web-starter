@@ -9,7 +9,7 @@ import {
 } from "remix";
 import type { MetaFunction } from "remix";
 import { useReactNativeStyles } from "./rn-styles";
-import { StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "~react-native";
 import globalStyles from "./styles/global.css";
 
 export const links: LinksFunction = () => {

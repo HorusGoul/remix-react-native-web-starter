@@ -11,7 +11,8 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./app/*"]
+      "~react-native": ["./node_modules/react-native-web"],
+      "~/*": ["./app/*"],
     },
 
     // Remix takes care of building everything in `remix build`.

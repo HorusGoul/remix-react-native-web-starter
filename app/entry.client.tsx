@@ -1,6 +1,6 @@
 import { RemixBrowser } from "remix";
 import { hydrate } from "react-dom";
-import { AppRegistry } from "react-native";
+import { AppRegistry } from "~react-native";
 import { ReactNativeStylesContext } from "./rn-styles";
 
 const App = () => <RemixBrowser />;

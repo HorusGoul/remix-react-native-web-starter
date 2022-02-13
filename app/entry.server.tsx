@@ -1,6 +1,6 @@
 import { renderToString } from "react-dom/server";
 import { RemixServer, type EntryContext } from "remix";
-import { AppRegistry } from "react-native";
+import { AppRegistry } from "~react-native";
 import { ReactNativeStylesContext } from "./rn-styles";
 
 export default function handleRequest(
