@@ -1,7 +1,8 @@
-import { renderToString } from "react-dom/server";
-import { RemixServer, type EntryContext } from "remix";
+import { renderToString, renderToStaticMarkup } from "react-dom/server";
+import { RemixServer } from "remix";
+import type { EntryContext } from "remix";
 import { AppRegistry } from "react-native";
-import { ReactNativeStylesContext } from "./rn-styles";
+import { ReplaceWithStylesSSRTag } from "./rn-styles";
 
 export default function handleRequest(
   request: Request,
@@ -13,16 +14,16 @@ export default function handleRequest(
 
   AppRegistry.registerComponent("App", () => App);
 
+  let markup = renderToString(<App />);
+
   // @ts-ignore
   const { getStyleElement } = AppRegistry.getApplication("App", {});
+  const stylesMarkup = renderToStaticMarkup(getStyleElement());
 
-  const page = (
-    <ReactNativeStylesContext.Provider value={getStyleElement()}>
-      <App />
-    </ReactNativeStylesContext.Provider>
+  markup = markup.replace(
+    renderToStaticMarkup(ReplaceWithStylesSSRTag),
+    stylesMarkup
   );
-
-  const markup = renderToString(page);
 
   responseHeaders.set("Content-Type", "text/html");
 
