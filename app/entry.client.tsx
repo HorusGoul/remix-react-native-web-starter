@@ -1,4 +1,4 @@
-import { RemixBrowser } from "remix";
+import { RemixBrowser } from "@remix-run/react";
 import { hydrate } from "react-dom";
 import { AppRegistry } from "react-native";
 import { ReactNativeStylesContext } from "./rn-styles";

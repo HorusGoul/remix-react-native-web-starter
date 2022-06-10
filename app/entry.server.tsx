@@ -1,6 +1,6 @@
 import { renderToString, renderToStaticMarkup } from "react-dom/server";
-import { RemixServer } from "remix";
-import type { EntryContext } from "remix";
+import { RemixServer } from "@remix-run/react";
+import type { EntryContext } from "@remix-run/node";
 import { AppRegistry } from "react-native";
 import { ReplaceWithStylesSSRTag } from "./rn-styles";
 

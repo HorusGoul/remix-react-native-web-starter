@@ -1,13 +1,12 @@
 import {
   Links,
-  LinksFunction,
   LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "remix";
-import type { MetaFunction } from "remix";
+} from "@remix-run/react";
+import type { MetaFunction, LinksFunction } from "@remix-run/node";
 import { useReactNativeStyles } from "./rn-styles";
 import { StyleSheet, View } from "react-native";
 import globalStyles from "./styles/global.css";
