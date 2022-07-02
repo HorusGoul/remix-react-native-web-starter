@@ -1,5 +1,5 @@
 import { RemixBrowser } from "@remix-run/react";
-import { hydrate } from "react-dom";
+import { hydrateRoot } from "react-dom/client";
 import { AppRegistry } from "react-native";
 import { ReactNativeStylesContext } from "./rn-styles";
 
@@ -10,9 +10,9 @@ AppRegistry.registerComponent("App", () => App);
 // @ts-ignore
 const { getStyleElement } = AppRegistry.getApplication("App");
 
-hydrate(
+hydrateRoot(
+  document,
   <ReactNativeStylesContext.Provider value={getStyleElement()}>
     <App />
-  </ReactNativeStylesContext.Provider>,
-  document
+  </ReactNativeStylesContext.Provider>
 );
